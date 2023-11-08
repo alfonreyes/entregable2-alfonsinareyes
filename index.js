@@ -1,3 +1,14 @@
+function saludarUsuario(){
+    let nombreUsuario = localStorage.getItem("Ingrese su Usuario")
+    if(!nombreUsuario){
+        nombreUsuario = prompt("Ingrese su nombre de Usuario")
+        localStorage.setItem("usuario", nombreUsuario)
+    }else{
+        alert(`Hola ${nombreUsuario}, Bienvenido`)
+    }
+}
+saludarUsuario()
+
 const btnCart = document.querySelector('.container-cart-icon')
 const containerCartProducts = document.querySelector('.container-cart-products')
 

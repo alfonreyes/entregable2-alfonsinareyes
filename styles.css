@@ -12,7 +12,9 @@ body{
     max-width: 1200px;
     font-family: 'Lato';
     color: #333;
-    
+}
+.dark{
+    background: black;
 }
 
 .icon-cart{
@@ -20,7 +22,6 @@ body{
     height: 40px;
     stroke: #000;
 }
-
 .icon-cart:hover{
     cursor: pointer;
 }
@@ -122,7 +123,15 @@ header{
     border-radius: 10px;
     
 }
-
+body.dark header h1{
+    color: #F1F1F1;
+}
+body.dark .container-icon{
+    background-color: #F1F1F1;
+}
+body.dark .item{
+    color: #fff;
+}
 .cart-product{
     display: flex;
     align-items: center;
@@ -131,6 +140,9 @@ header{
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
 
+}
+.cart-product .dark{
+    color: aqua;
 }
 
 .info-cart-product{
@@ -255,3 +267,4 @@ header{
     justify-content: center;
     text-align: center;
     }
+

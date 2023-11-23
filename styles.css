@@ -267,4 +267,16 @@ body.dark .item{
     justify-content: center;
     text-align: center;
     }
-
+    .btn-outline-primary{
+        width: 100px;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        background: rgb(127, 197, 255);
+        border-radius: 50px;
+    }
+.formulario{
+    position: absolute;
+    right: 700px;
+    margin: 0;
+    top: 0;
+}

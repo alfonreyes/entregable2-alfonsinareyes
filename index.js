@@ -1,14 +1,3 @@
-function saludarUsuario(){
-    let nombreUsuario = localStorage.getItem("Ingrese su Usuario")
-    if(!nombreUsuario){
-        nombreUsuario = prompt("Ingrese su nombre de Usuario")
-        localStorage.setItem("usuario", nombreUsuario)
-    }else{
-        alert(`Hola ${nombreUsuario}, Bienvenido`)
-    }
-}
-saludarUsuario()
-
 const btnCart = document.querySelector('.container-cart-icon')
 const containerCartProducts = document.querySelector('.container-cart-products')
 
@@ -30,33 +19,31 @@ const countProducts =document.querySelector('#contador-productos')
 
 productsList.addEventListener('click', e => {
 
-    if(e.target.classList.contains('btn-add-cart')){
-        const product = e.target.parentElement;
+if(e.target.classList.contains('btn-add-cart')){
+    const product = e.target.parentElement;
 
-        const infoProduct = {
-            quantity: 1,
-            title: product.querySelector('h2').textContent,
-            price: product.querySelector('p').textContent,
-        }
+    const infoProduct = {
+        quantity: 1,
+        title: product.querySelector('h2').textContent,
+        price: product.querySelector('p').textContent,
+}
 
-        const exits = allProducts.some(product => product.title === infoProduct.title)
-
-        if(exits){
-            const product = allProducts.map(product => {
-                if(product.title === infoProduct.title){
-                    product.quantity++;
-                    return product
-                } else{
-                    return product
-                }
-            })
-            allProducts = [...product];
-        }else{
-            allProducts = [...allProducts, infoProduct]
-        }
-        
-        showHTML()
-    }
+const exits = allProducts.some(product => product.title === infoProduct.title)
+if(exits){
+    const product = allProducts.map(product => {
+    if(product.title === infoProduct.title){
+        product.quantity++;
+            return product
+    } else{
+        return product
+}
+})
+allProducts = [...product];
+}else{
+    allProducts = [...allProducts, infoProduct]
+}
+showHTML()
+}
 
 
 });
@@ -136,3 +123,34 @@ if(localStorage.getItem('dark-mode') === 'true'){
 	document.body.classList.remove('dark');
 	btnSwitch.classList.remove('active');
 }
+
+// sweet alert//
+const btnAlert = document.querySelector(".btn-outline-primary")
+
+btnAlert.addEventListener("click", () =>{
+    Swal.fire({
+        title: "Perfecto",
+        text: "Deseas confirmas la compra?",
+        icon: "questyon",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "COMPRAR"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "COMPRA CONFIRMADA",
+            text: "En 7 dias habiles el producto llegara a tu domicilio",
+            icon: "success"
+          });
+        }
+      });
+      
+})
+
+
+
+
+
+
+

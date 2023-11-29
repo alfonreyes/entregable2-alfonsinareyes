@@ -206,6 +206,7 @@ body.dark .item{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin: 30px;
 }
 
 .item{
@@ -274,9 +275,3 @@ body.dark .item{
         background: rgb(127, 197, 255);
         border-radius: 50px;
     }
-.formulario{
-    position: absolute;
-    right: 700px;
-    margin: 0;
-    top: 0;
-}
